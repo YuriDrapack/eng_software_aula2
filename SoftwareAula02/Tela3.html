@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Busca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Resultado da Busca</h2>
+        <p id="resultMessage"></p>
+        <button id="restartBtn">Reiniciar</button>
+    </div>
+
+    <script src="./back.js"></script>
+</body>
+<script>
+    const position = window.localStorage.getItem('position');
+    document.getElementById('resultMessage').innerText = `Número encontrado na posição ${position}`;
+
+    document.getElementById('restartBtn').addEventListener('click', () => {
+        window.localStorage.clear();
+        window.location.href = "Tela1.html";
+    });
+</script>
+</html>
